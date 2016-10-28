@@ -6,31 +6,27 @@ import (
 )
 
 func TestGet(t *testing.T) {
-	log.Println("Testing Get")
-	teststring := "YHOO"
-	var tst Stock
-	tst, err := Get(teststring)
 
-	if err != nil {
-		log.Println(err.Error())
-	} else {
-		log.Println(tst.Query.Results.Quote.Symbol)
-	}
-
-}
-
-func TestPolyGet(t *testing.T) {
-	log.Println("Testing PolyGet")
-	teststrings := "YHOO, APPL, MSFT"
-	var tst Stocks
-	tst, err := PolyGet(teststrings)
+	teststocks, err := GetStocks("YHOO, AAPL, MSFT")
 
 	if err != nil {
 		log.Println("error")
 	} else {
-		log.Println(tst.Query.Results.Quote[0].Symbol)
-		log.Println(tst.Query.Results.Quote[1].Symbol)
-		log.Println(tst.Query.Results.Quote[2].Symbol)
+		log.Println(teststocks.Query.Results.Quote[0].Symbol)
+		log.Println(teststocks.Query.Results.Quote[0].LastTradePriceOnly)
+		log.Println(teststocks.Query.Results.Quote[1].Symbol)
+		log.Println(teststocks.Query.Results.Quote[1].LastTradePriceOnly)
+		log.Println(teststocks.Query.Results.Quote[2].Symbol)
+		log.Println(teststocks.Query.Results.Quote[2].LastTradePriceOnly)
+	}
+
+	teststock, err := GetSingleStocks("YHOO")
+
+	if err != nil {
+		log.Println(err.Error())
+	} else {
+		log.Println(teststock.Query.Results.Quote.Name)
+		log.Println(teststock.Query.Results.Quote.LastTradePriceOnly)
 	}
 
 }
