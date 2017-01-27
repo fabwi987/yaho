@@ -3,6 +3,8 @@
 A package for retreiving financial data to your application.
 The package uses the [Yahoo Finance API](https://finance.yahoo.com/) to fetch the latest financial data.
 
+http://query.yahooapis.com/v1/public/yql?q=select+%2A+from+yahoo.finance.quote+where+symbol+in+%28%27CBA.ST%27%29&format=json&env=http://datatables.org/alltables.env
+
 ##Example
 
 Use the following command for a single or multiple quote:

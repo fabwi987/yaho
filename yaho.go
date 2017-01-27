@@ -16,6 +16,7 @@ func GetStocks(stockSymbols string) (*Response, error) {
 	specification := "&format=json&env=http://datatables.org/alltables.env"
 
 	total := destination + query + specification
+	//log.Println(total)
 	resp, err := http.Get(total)
 
 	if err != nil {
@@ -42,6 +43,7 @@ func GetSingleStocks(stockSymbols string) (*SingleResponse, error) {
 	specification := "&format=json&env=http://datatables.org/alltables.env"
 
 	total := destination + query + specification
+	//log.Println(total)
 	resp, err := http.Get(total)
 
 	if err != nil {
