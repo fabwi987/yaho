@@ -13,7 +13,7 @@ func GetStocks(stockSymbols string) (*Response, error) {
 	//Build the http request
 	query := url.QueryEscape("select * from yahoo.finance.quote where symbol in ('" + stockSymbols + "')")
 	destination := "http://query.yahooapis.com/v1/public/yql?q="
-	specification := "&format=json&env=http://datatables.org/alltables.env"
+	specification := "&format=json&env=store://datatables.org/alltableswithkeys"
 
 	total := destination + query + specification
 	//log.Println(total)
@@ -40,7 +40,7 @@ func GetSingleStocks(stockSymbols string) (*SingleResponse, error) {
 	//Build the http request
 	query := url.QueryEscape("select * from yahoo.finance.quote where symbol in ('" + stockSymbols + "')")
 	destination := "http://query.yahooapis.com/v1/public/yql?q="
-	specification := "&format=json&env=http://datatables.org/alltables.env"
+	specification := "&format=json&env=store://datatables.org/alltableswithkeys"
 
 	total := destination + query + specification
 	//log.Println(total)

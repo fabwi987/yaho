@@ -12,12 +12,11 @@ func TestGet(t *testing.T) {
 	if err != nil {
 		log.Println("error")
 	} else {
-		log.Println(teststocks.Query.Results.Quote[0].Symbol)
-		log.Println(teststocks.Query.Results.Quote[0].LastTradePriceOnly)
-		log.Println(teststocks.Query.Results.Quote[1].Symbol)
-		log.Println(teststocks.Query.Results.Quote[1].LastTradePriceOnly)
-		log.Println(teststocks.Query.Results.Quote[2].Symbol)
-		log.Println(teststocks.Query.Results.Quote[2].LastTradePriceOnly)
+		for i := 0; i < len(teststocks.Query.Results.Quote); i++ {
+			log.Println("Hämtar flera stocks [")
+			log.Println(teststocks.Query.Results.Quote[i].Symbol)
+			log.Println(teststocks.Query.Results.Quote[i].LastTradePriceOnly)
+		}
 	}
 
 	teststock, err := GetSingleStocks("YHOO")
@@ -25,6 +24,7 @@ func TestGet(t *testing.T) {
 	if err != nil {
 		log.Println(err.Error())
 	} else {
+		log.Println("Hämtar en stocks [")
 		log.Println(teststock.Query.Results.Quote.Name)
 		log.Println(teststock.Query.Results.Quote.LastTradePriceOnly)
 	}

@@ -5,6 +5,10 @@ The package uses the [Yahoo Finance API](https://finance.yahoo.com/) to fetch th
 
 http://query.yahooapis.com/v1/public/yql?q=select+%2A+from+yahoo.finance.quote+where+symbol+in+%28%27CBA.ST%27%29&format=json&env=http://datatables.org/alltables.env
 
+https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quote%20where%20symbol%20in%20(%22YHOO%22%2C%22AAPL%22%2C%22GOOG%22%2C%22MSFT%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys
+
+https://developer.yahoo.com/yql/console/?q=show%20tables&env=store://datatables.org/alltableswithkeys#h=select+*+from+yahoo.finance.quote+where+symbol+in+(%22YHOO%22%2C%22AAPL%22%2C%22GOOG%22%2C%22MSFT%22)
+
 ##Example
 
 Use the following command for a single or multiple quote:
