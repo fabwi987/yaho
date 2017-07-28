@@ -1,4 +1,4 @@
-# YaGoo
+# yaho
 
 A package for retreiving financial data to your application.
 The package uses the [Yahoo Finance API](https://finance.yahoo.com/) to fetch the latest financial data.
